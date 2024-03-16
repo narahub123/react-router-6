@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Vans = () => {
   const [vans, setVans] = useState([]);
@@ -7,21 +8,22 @@ const Vans = () => {
       .then((res) => res.json())
       .then((data) => setVans(data.vans));
   }, []);
-
   // console.log(vans); // {vans: Array(6)}
 
   // maping the data
   const vanElements = vans.map((van) => (
-    <div key={van.id} className="van-tile">
-      <img src={van.imageUrl} />
-      <div className="van-info">
-        <h3>{van.name}</h3>
-        <p>
-          ${van.price} <span>/day</span>
-        </p>
+    <Link key={van.id} to={`/vans/${van.id}`}>
+      <div className="van-tile">
+        <img src={van.imageUrl} />
+        <div className="van-info">
+          <h3>{van.name}</h3>
+          <p>
+            ${van.price} <span>/day</span>
+          </p>
+        </div>
+        <i className={`van-type ${van.type} selected`}>{van.type}</i>
       </div>
-      <i className={`van-type ${van.type} selected`}>{van.type}</i>
-    </div>
+    </Link>
   ));
 
   return (
