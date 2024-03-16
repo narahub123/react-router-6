@@ -1,4 +1,5 @@
-# React + Vite
+# React Router v6 Study
 
-## Define a router 
+## Define a router
+
 ### - createBrowserRouter, RouterProvider
