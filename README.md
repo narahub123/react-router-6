@@ -53,3 +53,5 @@
 ### understand relative prop in Link
 
 ## Nested Routes of HostVanDetail
+
+## Navbar for HostVanDetail 
