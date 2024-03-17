@@ -4,7 +4,7 @@
 
 ### - createBrowserRouter, RouterProvider
 
-## Create Layout route
+## Create Layout route - nested routes
 
 ### - children, Link, Outlet
 
@@ -19,3 +19,6 @@
 ## define a VansDetail route, Learn who to get parameter from URL and style the component
 
 ### - useParams()
+
+## Add Host page 
+### - nested routes, layout route 

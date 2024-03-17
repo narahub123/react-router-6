@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Vans from "./pages/Vans";
 import VanDetail from "./pages/VanDetail";
+import Dashboard from "./pages/Host/Dashboard";
+import Income from "./pages/Host/Income";
+import Reviews from "./pages/Host/Reviews";
 
 import "./App.css";
 import "../data/server";
@@ -17,6 +20,23 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/host",
+        children: [
+          {
+            path: "/host",
+            element: <Dashboard />,
+          },
+          {
+            path: "/host/income",
+            element: <Income />,
+          },
+          {
+            path: "/host/reviews",
+            element: <Reviews />,
+          },
+        ],
       },
       {
         path: "/about",
