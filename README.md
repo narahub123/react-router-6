@@ -71,3 +71,6 @@
 ## Merge search params
 ### Hard coded parameters cause erasing and replacing the existing parameters 
 ### - need to study more 
+
+## Back to all vans in VanDetail
+
