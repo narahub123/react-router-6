@@ -54,4 +54,8 @@
 
 ## Nested Routes of HostVanDetail
 
-## Navbar for HostVanDetail 
+## Navbar for HostVanDetail
+
+## Pass a value through Outlet
+
+### - useOutletContext
