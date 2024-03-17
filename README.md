@@ -109,3 +109,7 @@
 ## Pass message to Login pages
 
 ### - loader()
+
+## Set up for auth
+
+### redirect using useNavigate()

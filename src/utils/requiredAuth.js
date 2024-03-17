@@ -7,4 +7,5 @@ export async function requiredAuth() {
     response.body = true;
     throw response;
   }
+  return null;
 }
