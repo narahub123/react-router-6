@@ -93,4 +93,9 @@
 ## loding indicators using useState()
 
 ## replace useEffect with loader()
-### - loader() 
+
+### - loader()
+
+## error handling
+
+### - errorElement, useRouteError()
