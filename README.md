@@ -197,3 +197,7 @@
 ## Firestore
 
 ## Firestore Setup
+
+## getVans()
+
+## getVan()
