@@ -35,3 +35,7 @@
 ## Add HostVans and HostVanDetail routes 
 ### - nested route, relative paths 
 
+## Create host navbar 
+### need to how to import layout route 
+
+

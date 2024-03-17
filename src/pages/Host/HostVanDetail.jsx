@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Outlet, useParams } from "react-router-dom";
 
 const HostVanDetail = () => {
-  return <h1>HostVanDetail Page</h1>;
+  return (
+    <>
+      <h1>HostVanDetail</h1>
+    </>
+  );
 };
 
 export default HostVanDetail;
