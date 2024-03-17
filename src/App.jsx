@@ -37,6 +37,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/login",
+        element: <Login />,
+        loader: loginLoader,
+        action: loginAction,
+      },
+      {
         path: "host",
         element: <HostLayout />,
         children: [
@@ -99,12 +105,7 @@ const router = createBrowserRouter([
         element: <VanDetail />,
         loader: vanDetailLoader,
       },
-      {
-        path: "login",
-        element: <Login />,
-        loader: loginLoader,
-        action: loginAction,
-      },
+
       {
         path: "#",
         element: <NotFound />,
