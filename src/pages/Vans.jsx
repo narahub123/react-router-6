@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Vans = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [vans, setVans] = useState([]);
   useEffect(() => {
     const vans = fetch("/api/vans")
@@ -10,10 +11,17 @@ const Vans = () => {
   }, []);
   // console.log(vans); // {vans: Array(6)}
 
+  const typeFilter = searchParams.get("type");
+
+  // console.log(typeFilter);
+  const displayedVans = typeFilter
+    ? vans.filter((van) => van.type === typeFilter)
+    : vans;
+
   // maping the data
-  const vanElements = vans.map((van) => (
-    <Link key={van.id} to={`/vans/${van.id}`}>
-      <div className="van-tile">
+  const vanElements = displayedVans.map((van) => (
+    <div key={van.id} className="van-tile">
+      <Link to={`/vans/${van.id}`}>
         <img src={van.imageUrl} />
         <div className="van-info">
           <h3>{van.name}</h3>
@@ -22,8 +30,8 @@ const Vans = () => {
           </p>
         </div>
         <i className={`van-type ${van.type} selected`}>{van.type}</i>
-      </div>
-    </Link>
+      </Link>
+    </div>
   ));
 
   return (

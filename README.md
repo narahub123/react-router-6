@@ -59,3 +59,6 @@
 ## Pass a value through Outlet
 
 ### - useOutletContext
+
+## SearchParams 
+### - useSearchParams()
