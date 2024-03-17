@@ -1,6 +1,15 @@
 import React, { useState } from "react";
+import { useLoaderData } from "react-router-dom";
+
+export async function loader({ request }) {
+  const url = new URL(request.url).searchParams;
+  // console.log(url.get("message"));
+  return url.get("message");
+}
 
 const Login = () => {
+  const message = useLoaderData();
+  // console.log(message);
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
@@ -22,6 +31,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <h1>Sign in to your account</h1>
+      <h2 className="red">{message}</h2>
       <form onSubmit={handleSubmit} className="login-form">
         <input
           type="email"

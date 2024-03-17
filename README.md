@@ -105,3 +105,7 @@
 ## replace Effect() with loader() - VanDetail, HostVans, HostVanDetail
 
 ## Protected route
+
+## Pass message to Login pages
+
+### - loader()
