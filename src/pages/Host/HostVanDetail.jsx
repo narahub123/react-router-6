@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
 
 const HostVanDetail = () => {
   const { id } = useParams();
@@ -11,7 +11,7 @@ const HostVanDetail = () => {
       .then((data) => setCurrentVan(data.vans[0]));
   }, []);
 
-  console.log(currentVan);
+  // console.log(currentVan);
 
   // validation
   if (!currentVan) {
@@ -35,6 +35,7 @@ const HostVanDetail = () => {
               <h4>${currentVan.price}</h4>
             </div>
           </div>
+          <Outlet />
         </div>
       </section>
     </>
