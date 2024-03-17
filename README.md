@@ -78,8 +78,12 @@
 
 ## Back to all vans in VanDetail
 
-## Pass the state to the next page and receive the state 
+## Pass the state to the next page and receive the state
 
-### - state prop, useLocation() 
+### - state prop, useLocation()
 
 ### https://reactrouter.com/en/main/components/link#state
+
+## 404 Error
+
+### path="\*"

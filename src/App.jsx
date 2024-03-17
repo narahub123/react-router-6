@@ -14,6 +14,7 @@ import HostVanDetail from "./pages/Host/HostVanDetail";
 import HostVanInfo from "./pages/Van/HostVanInfo";
 import HostVanPricing from "./pages/Van/HostVanPricing";
 import HostVanPhotos from "./pages/Van/HostVanPhotos";
+import NotFound from "./components/NotFound";
 
 import "./App.css";
 import "../data/server";
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "vans/:id",
         element: <VanDetail />,
+      },
+      {
+        path: "#",
+        element: <NotFound />,
       },
     ],
   },
