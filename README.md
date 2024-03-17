@@ -193,3 +193,7 @@
 ### remove manual error handling code and replace it with errorElement
 
 ### errorElement
+
+## Firestore
+
+## Firestore Setup
