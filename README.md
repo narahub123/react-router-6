@@ -67,3 +67,7 @@
 ## Links with searchParams()
 ### - difference between to and onClick 
 ### - need more study for it 
+
+## Merge search params
+### Hard coded parameters cause erasing and replacing the existing parameters 
+### - need to study more 

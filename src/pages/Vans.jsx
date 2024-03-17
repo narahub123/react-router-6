@@ -21,7 +21,7 @@ const Vans = () => {
   // maping the data
   const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="van-tile">
-      <Link to={`/vans/${van.id}`}>
+      <Link to={van.id}>
         <img src={van.imageUrl} />
         <div className="van-info">
           <h3>{van.name}</h3>
@@ -34,6 +34,18 @@ const Vans = () => {
     </div>
   ));
 
+  function handlerFilterChange(key, value) {
+    setSearchParams((prevParams) => {
+      if (value === null) {
+        prevParams.delete(key);
+      } else {
+        prevParams.set(key, value);
+      }
+
+      return prevParams;
+    });
+  }
+
   return (
     <>
       <div className="van-list-container">
@@ -41,28 +53,28 @@ const Vans = () => {
         <div className="van-list-filter-buttons">
           <Link
             // to="?type=simple"
-            onClick={() => setSearchParams({ type: "simple" })}
+            onClick={() => handlerFilterChange("type", "simple")}
             className="van-type simple"
           >
             Simple
           </Link>
           <Link
             // to="?type=luxury"
-            onClick={() => setSearchParams({ type: "luxury" })}
+            onClick={() => handlerFilterChange("type", "luxury")}
             className="van-type luxury"
           >
             Luxury
           </Link>
           <Link
             // to="?type=rugged"
-            onClick={() => setSearchParams({ type: "rugged" })}
+            onClick={() => handlerFilterChange("type", "rugged")}
             className="van-type rugged"
           >
             Rugged
           </Link>
           <Link
             // to="."
-            onClick={() => setSearchParams({})}
+            onClick={() => handlerFilterChange("type", null)}
             className="van-type clear-filters"
           >
             Clear Filter
