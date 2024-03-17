@@ -32,5 +32,6 @@
 
 ### - NavLink, learn how to mark the active link 
 
-
+## Add HostVans and HostVanDetail routes 
+### - nested route, relative paths 
 

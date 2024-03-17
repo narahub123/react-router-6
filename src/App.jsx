@@ -8,6 +8,8 @@ import VanDetail from "./pages/VanDetail";
 import Dashboard from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
+import HostVans from "./pages/Host/HostVans";
+import HostVanDetail from "./pages/Host/HostVanDetail";
 
 import "./App.css";
 import "../data/server";
@@ -29,12 +31,20 @@ const router = createBrowserRouter([
             element: <Dashboard />,
           },
           {
-            path: "host/income",
+            path: "income",
             element: <Income />,
           },
           {
-            path: "host/reviews",
+            path: "reviews",
             element: <Reviews />,
+          },
+          {
+            path: "vans",
+            element: <HostVans />,
+          },
+          {
+            path: "vans/:id",
+            element: <HostVanDetail />,
           },
         ],
       },
