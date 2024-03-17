@@ -101,3 +101,7 @@
 ### - errorElement, useRouteError()
 
 ## Fake Login form
+
+## replace Effect() with loader() - VanDetail, HostVans, HostVanDetail
+
+## Protected route
