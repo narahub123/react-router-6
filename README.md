@@ -60,5 +60,10 @@
 
 ### - useOutletContext
 
-## SearchParams 
+## SearchParams
+
 ### - useSearchParams()
+
+## Links with searchParams()
+### - difference between to and onClick 
+### - need more study for it 
