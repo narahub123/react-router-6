@@ -19,6 +19,7 @@ import HostVanPhotos from "./pages/Van/HostVanPhotos";
 import NotFound from "./components/NotFound";
 import Error from "./components/Error";
 import Login from "./pages/Login";
+import { requiredAuth } from "./utils/requiredAuth";
 
 import "./App.css";
 import "../data/server";
@@ -39,14 +40,17 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Dashboard />,
+            loader: async () => await requiredAuth(),
           },
           {
             path: "income",
             element: <Income />,
+            loader: async () => await requiredAuth(),
           },
           {
             path: "reviews",
             element: <Reviews />,
+            loader: async () => await requiredAuth(),
           },
           {
             path: "vans",
@@ -61,14 +65,17 @@ const router = createBrowserRouter([
               {
                 index: true,
                 element: <HostVanInfo />,
+                loader: async () => await requiredAuth(),
               },
               {
                 path: "pricing",
                 element: <HostVanPricing />,
+                loader: async () => await requiredAuth(),
               },
               {
                 path: "photos",
                 element: <HostVanPhotos />,
+                loader: async () => await requiredAuth(),
               },
             ],
           },
