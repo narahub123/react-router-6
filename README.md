@@ -185,3 +185,5 @@
 ### Suspense
 
 ### - allow to wrap suspended component in Suspense
+
+## defer VanDetail, HostVans, HostVanDetail 

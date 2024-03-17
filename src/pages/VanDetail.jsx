@@ -1,25 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link, useLocation, useLoaderData } from "react-router-dom";
+import React, { Suspense } from "react";
+import {
+  Link,
+  useLocation,
+  useLoaderData,
+  defer,
+  Await,
+} from "react-router-dom";
 import { getVans } from "../utils/api";
 
 export async function loader({ params }) {
   const id = params.id;
-  return getVans(id);
+  return defer({ van: getVans(id) });
 }
 
 const VanDetail = () => {
   const location = useLocation();
-  const van = useLoaderData();
+  const dataPromise = useLoaderData();
+
+  console.log(dataPromise);
 
   const search = location.state?.search || "";
 
   const type = location.state?.type || "all";
 
-  return (
-    <div className="van-detail-container">
-      <Link to={`..${search}`} relative="path" className="back-button">
-        &larr; <span>Back to {type} vans</span>
-      </Link>
+  function renderedVanElement(van) {
+    return (
       <div className="van-detail">
         <img src={van.imageUrl} alt={van.name} />
         <i className={`van-type ${van.type} selected`}>{van.type}</i>
@@ -30,6 +35,16 @@ const VanDetail = () => {
         <p>{van.description}</p>
         <button className="link-button">Rent this van</button>
       </div>
+    );
+  }
+  return (
+    <div className="van-detail-container">
+      <Link to={`..${search}`} relative="path" className="back-button">
+        &larr; <span>Back to {type} vans</span>
+      </Link>
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <Await resolve={dataPromise.van}>{renderedVanElement}</Await>;
+      </Suspense>
     </div>
   );
 };
