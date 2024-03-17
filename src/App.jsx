@@ -16,6 +16,7 @@ import HostVanPricing from "./pages/Van/HostVanPricing";
 import HostVanPhotos from "./pages/Van/HostVanPhotos";
 import NotFound from "./components/NotFound";
 import Error from "./components/Error";
+import Login from "./pages/Login";
 
 import "./App.css";
 import "../data/server";
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
       {
         path: "vans/:id",
         element: <VanDetail />,
+      },
+      {
+        path: "login",
+        element: <Login />,
       },
       {
         path: "#",
