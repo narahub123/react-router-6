@@ -8,13 +8,13 @@ import {
   Await,
 } from "react-router-dom";
 
-import { getHostVans } from "../../utils/api";
+import { getVan } from "../../utils/api";
 import { requiredAuth } from "../../utils/requiredAuth";
 
 export async function loader({ params, request }) {
   await requiredAuth(request);
   const id = params.id;
-  return defer({ van: getHostVans(id) });
+  return defer({ van: getVan(id) });
 }
 
 const HostVanDetail = () => {

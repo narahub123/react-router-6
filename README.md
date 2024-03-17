@@ -201,3 +201,5 @@
 ## getVans()
 
 ## getVan()
+
+## getHostVans()
