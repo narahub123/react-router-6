@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Vans from "./pages/Vans";
+import Vans, { loader as vansLoader } from "./pages/Vans";
 import VanDetail from "./pages/VanDetail";
 import HostLayout from "./components/HostLayout";
 import Dashboard from "./pages/Host/Dashboard";
@@ -75,6 +75,7 @@ const router = createBrowserRouter([
       {
         path: "vans",
         element: <Vans />,
+        loader: vansLoader,
       },
       {
         path: "vans/:id",

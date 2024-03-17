@@ -91,3 +91,6 @@
 ## update the fetch code
 
 ## loding indicators using useState()
+
+## replace useEffect with loader()
+### - loader() 
