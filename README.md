@@ -22,3 +22,5 @@
 
 ## Add Host page 
 ### - nested routes, layout route 
+
+## Relative paths & Index route

@@ -18,36 +18,36 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home />,
       },
       {
-        path: "/host",
+        path: "host",
         children: [
           {
-            path: "/host",
+            index: true,
             element: <Dashboard />,
           },
           {
-            path: "/host/income",
+            path: "host/income",
             element: <Income />,
           },
           {
-            path: "/host/reviews",
+            path: "host/reviews",
             element: <Reviews />,
           },
         ],
       },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
       },
       {
-        path: "/vans",
+        path: "vans",
         element: <Vans />,
       },
       {
-        path: "/vans/:id",
+        path: "vans/:id",
         element: <VanDetail />,
       },
     ],
