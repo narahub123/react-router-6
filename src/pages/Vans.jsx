@@ -18,8 +18,6 @@ const Vans = () => {
 
   const dataPromise = useLoaderData();
 
-  console.log(dataPromise);
-
   const typeFilter = searchParams.get("type");
 
   function handlerFilterChange(key, value) {

@@ -186,4 +186,10 @@
 
 ### - allow to wrap suspended component in Suspense
 
-## defer VanDetail, HostVans, HostVanDetail 
+## defer VanDetail, HostVans, HostVanDetail
+
+## error handling
+
+### remove manual error handling code and replace it with errorElement
+
+### errorElement

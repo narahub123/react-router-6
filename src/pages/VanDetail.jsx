@@ -14,10 +14,8 @@ export async function loader({ params }) {
 }
 
 const VanDetail = () => {
-  const location = useLocation();
   const dataPromise = useLoaderData();
-
-  console.log(dataPromise);
+  const location = useLocation();
 
   const search = location.state?.search || "";
 
@@ -37,6 +35,7 @@ const VanDetail = () => {
       </div>
     );
   }
+
   return (
     <div className="van-detail-container">
       <Link to={`..${search}`} relative="path" className="back-button">
