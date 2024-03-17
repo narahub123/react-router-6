@@ -122,10 +122,32 @@
 
 ### send the logged use to /host page after they successfully login
 
-## Move back to former page after log in 
+## Move back to former page after log in
 
 ### - replace the current entry in the history stack with the upcoming entry in the history stack
 
 ### - understand what history stack is
 
 ### - learn how to use replace prop
+
+## Represent state of navigation and POST form submision with useNavigation()
+
+### replace useState() with useNavigation()
+
+### navigation.state
+
+### idle - There is no navigation pending.
+
+### submitting - A route action is being called due to a form submission using POST, PUT, PATCH, or DELETE
+
+### loading - The loaders for the next routes are being called to render the next page
+
+### normal navigation and Get form submission
+
+### idle -> loading -> idle
+
+### POST, PUT, PATCH, DELETE transition
+
+### idle -> submitting -> loading -> idle
+
+### https://reactrouter.com/en/main/hooks/use-navigation#navigationstate

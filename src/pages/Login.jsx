@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   useLoaderData,
-  useNavigate,
   Form,
   redirect,
   useActionData,
+  useNavigation,
 } from "react-router-dom";
 
 import { loginUser } from "../utils/api";
@@ -26,7 +26,7 @@ export async function action({ request }) {
 
     const response = redirect("/host");
     response.body = true;
-    throw response;
+    return response;
   } catch (error) {
     return error.message;
   }
@@ -38,13 +38,9 @@ export default function Login() {
     password: "",
   });
 
-  const [status, setStatus] = useState("idle");
-  // const [error, setError] = useState(null);
   const message = useLoaderData();
-  const navigate = useNavigate();
-
   const error = useActionData();
-  console.log(error);
+  const navigation = useNavigation();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -74,8 +70,8 @@ export default function Login() {
           placeholder="Password"
           value={loginFormData.password}
         />
-        <button disabled={status === "submitting"}>
-          {status === "submitting" ? "Logging in..." : "Log in"}
+        <button disabled={navigation.status === "submitting"}>
+          {navigation.status === "submitting" ? "Logging in..." : "Log in"}
         </button>
       </Form>
     </div>
