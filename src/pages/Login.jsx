@@ -60,7 +60,7 @@ export default function Login() {
       <h1>Sign in to your account</h1>
       {message && <h3 className="red">{message}</h3>}
       {error && <h3 className="red">{error.message}</h3>}
-      <Form method="post" className="login-form">
+      <Form method="post" className="login-form" replace>
         <input
           name="email"
           onChange={handleChange}

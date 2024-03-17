@@ -114,10 +114,18 @@
 
 ### redirect using useNavigate()
 
-## Add Form and action 
+## Add Form and action
 
-## Use data in action to log in 
-### save the data to localStorage 
+## Use data in action to log in
+
+### save the data to localStorage
+
 ### send the logged use to /host page after they successfully login
 
+## Move back to former page after log in 
 
+### - replace the current entry in the history stack with the upcoming entry in the history stack
+
+### - understand what history stack is
+
+### - learn how to use replace prop
