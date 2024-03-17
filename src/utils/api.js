@@ -1,6 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+} from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -27,19 +33,14 @@ export async function getVans() {
   return dataArr;
 }
 
-// export async function getVans(id) {
-//   const url = id ? `/api/vans/${id}` : "/api/vans";
-//   const res = await fetch(url);
-//   if (!res.ok) {
-//     throw {
-//       message: "Failed to fetch vans",
-//       statusText: res.statusText,
-//       status: res.status,
-//     };
-//   }
-//   const data = await res.json();
-//   return data.vans;
-// }
+export async function getVan(id) {
+  const docRef = doc(db, "vans", id);
+  const vanSnapshot = await getDoc(docRef);
+  return {
+    ...vanSnapshot.data(),
+    id: vanSnapshot.id,
+  };
+}
 
 export async function getHostVans(id) {
   const url = id ? `/api/host/vans/${id}` : "/api/host/vans";

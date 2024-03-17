@@ -6,11 +6,11 @@ import {
   defer,
   Await,
 } from "react-router-dom";
-import { getVans } from "../utils/api";
+import { getVan } from "../utils/api";
 
 export async function loader({ params }) {
   const id = params.id;
-  return defer({ van: getVans(id) });
+  return defer({ van: getVan(id) });
 }
 
 const VanDetail = () => {
