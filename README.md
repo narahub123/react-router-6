@@ -151,3 +151,9 @@
 ### idle -> submitting -> loading -> idle
 
 ### https://reactrouter.com/en/main/hooks/use-navigation#navigationstate
+
+## redirect to the former page after log-in
+
+### how to get the path from url
+
+### learn how to use query string

@@ -2,15 +2,16 @@ import React from "react";
 import { Link, Outlet, NavLink, useLoaderData } from "react-router-dom";
 
 import { getHostVans } from "../../utils/api";
+import { requiredAuth } from "../../utils/requiredAuth";
 
-export async function loader({ params }) {
-  await requiredAuth();
+export async function loader({ params, request }) {
+  await requiredAuth(request);
   const id = params.id;
   return getHostVans(id);
 }
 
 const HostVanDetail = () => {
-  const currentVan = useLoaderData()[0];
+  const currentVan = useLoaderData();
 
   console.log(currentVan);
   // style for active

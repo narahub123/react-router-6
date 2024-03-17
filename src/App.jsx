@@ -49,17 +49,17 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Dashboard />,
-            loader: async () => await requiredAuth(),
+            loader: async ({ request }) => await requiredAuth(request),
           },
           {
             path: "income",
             element: <Income />,
-            loader: async () => await requiredAuth(),
+            loader: async ({ request }) => await requiredAuth(request),
           },
           {
             path: "reviews",
             element: <Reviews />,
-            loader: async () => await requiredAuth(),
+            loader: async ({ request }) => await requiredAuth(request),
           },
           {
             path: "vans",
@@ -74,17 +74,17 @@ const router = createBrowserRouter([
               {
                 index: true,
                 element: <HostVanInfo />,
-                loader: async () => await requiredAuth(),
+                loader: async ({ request }) => await requiredAuth(request),
               },
               {
                 path: "pricing",
                 element: <HostVanPricing />,
-                loader: async () => await requiredAuth(),
+                loader: async ({ request }) => await requiredAuth(request),
               },
               {
                 path: "photos",
                 element: <HostVanPhotos />,
-                loader: async () => await requiredAuth(),
+                loader: async ({ request }) => await requiredAuth(request),
               },
             ],
           },
