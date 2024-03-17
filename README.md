@@ -40,3 +40,5 @@
 
 ## Map the data of HostVan 
 
+## Building HostVanDetail
+### - fetch() 
