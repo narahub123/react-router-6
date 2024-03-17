@@ -24,3 +24,6 @@
 ### - nested routes, layout route 
 
 ## Relative paths & Index route
+
+## Add Footer 
+### 
