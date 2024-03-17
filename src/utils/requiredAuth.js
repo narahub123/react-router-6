@@ -5,7 +5,7 @@ export async function requiredAuth(request) {
 
   const pathname = new URL(request.url).pathname;
 
-  console.log(isLoggedIn);
+  // console.log(isLoggedIn);
   if (!isLoggedIn) {
     const response = redirect(
       `/login?message=You must log in first.&redirectTo=${pathname}`

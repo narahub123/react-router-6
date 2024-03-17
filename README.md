@@ -157,3 +157,31 @@
 ### how to get the path from url
 
 ### learn how to use query string
+
+## defer getVans()
+
+### learn defer, Await and Suspense
+
+### I still don't understand why defer is needed
+
+### defer
+
+### - allow to defer values returned from loaders by passing promises instead of resolved values
+
+### - it returns promise
+
+### Await and resolve prop
+
+### Await
+
+### - allow to surround the code that we will be waiting for when the component first renders and it will conditionally render only after the data has finished loading
+
+### - it will only render the children inside the render props after it has finished resolving the data
+
+### resolve prop
+
+### - to pass the promise for the data that we're trying to get to the resolved prop
+
+### Suspense
+
+### - allow to wrap suspended component in Suspense
