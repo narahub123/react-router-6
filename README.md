@@ -20,10 +20,17 @@
 
 ### - useParams()
 
-## Add Host page 
-### - nested routes, layout route 
+## Add Host page
+
+### - nested routes, layout route
 
 ## Relative paths & Index route
 
-## Add Footer 
-### 
+## Add Footer
+
+## Style active link with NavLink
+
+### - NavLink, learn how to mark the active link 
+
+
+
