@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, Form } from "react-router-dom";
 import { loginUser } from "../utils/api";
 
 export async function loader({ request }) {
   const url = new URL(request.url).searchParams;
   return url.get("message");
+}
+
+export async function action() {
+  
+  return null;
 }
 
 const Login = () => {
@@ -44,7 +49,7 @@ const Login = () => {
       <h1>Sign in to your account</h1>
       {message && <h2 className="red">{message}</h2>}
       {error && <h3 className="red">{error.message}</h3>}
-      <form onSubmit={handleSubmit} className="login-form">
+      <Form method="post" onSubmit={handleSubmit} className="login-form">
         <input
           type="email"
           name="email"
@@ -60,7 +65,7 @@ const Login = () => {
           value={loginFormData.password}
         />
         <button>Log in</button>
-      </form>
+      </Form>
     </div>
   );
 };

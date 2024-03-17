@@ -18,7 +18,10 @@ import HostVanPricing from "./pages/Van/HostVanPricing";
 import HostVanPhotos from "./pages/Van/HostVanPhotos";
 import NotFound from "./components/NotFound";
 import Error from "./components/Error";
-import Login, { loader as loginLoader } from "./pages/Login";
+import Login, {
+  loader as loginLoader,
+  action as loginAction,
+} from "./pages/Login";
 import { requiredAuth } from "./utils/requiredAuth";
 
 import "./App.css";
@@ -100,6 +103,7 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
         loader: loginLoader,
+        action: loginAction,
       },
       {
         path: "#",
