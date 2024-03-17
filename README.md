@@ -116,3 +116,8 @@
 
 ## Add Form and action 
 
+## Use data in action to log in 
+### save the data to localStorage 
+### send the logged use to /host page after they successfully login
+
+

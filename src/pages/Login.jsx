@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useLoaderData, useNavigate, Form } from "react-router-dom";
+import { useLoaderData, useNavigate, Form, redirect } from "react-router-dom";
 
 import { loginUser } from "../utils/api";
 
 export function loader({ request }) {
   const url = new URL(request.url).searchParams;
-  // console.log(url.get("message"));
+
   return url.get("message");
 }
 
@@ -13,7 +13,16 @@ export async function action({ request }) {
   const formData = await request.formData();
   const email = formData.get("email");
   const password = formData.get("password");
-  console.log(email, password);
+  // console.log(email, password);
+  const data = await loginUser({ email, password });
+  // console.log(data);
+
+  localStorage.setItem("loggedin", true);
+
+  const response = redirect("/host");
+  response.body = true;
+  throw response;
+
   return null;
 }
 
