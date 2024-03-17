@@ -30,17 +30,24 @@
 
 ## Style active link with NavLink
 
-### - NavLink, learn how to mark the active link 
+### - NavLink, learn how to mark the active link
 
-## Add HostVans and HostVanDetail routes 
-### - nested route, relative paths 
+## Add HostVans and HostVanDetail routes
 
-## Create host navbar 
-### need to how to import layout route 
+### - nested route, relative paths
 
-## Map the data of HostVan 
+## Create host navbar
+
+### need to how to import layout route
+
+## Map the data of HostVan
 
 ## Building HostVanDetail
-### - fetch() 
+
+### - fetch()
 
 ## Relative Links
+
+## Back to all vans
+
+### understand relative prop in Link
