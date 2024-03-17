@@ -5,11 +5,17 @@ import { getVans } from "../utils/api";
 const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [vans, setVans] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const typeFilter = searchParams.get("type");
+  // console.log(typeFilter);
 
   useEffect(() => {
     async function loadedVans() {
+      setLoading(true);
       const data = await getVans();
       setVans(data);
+      setLoading(false);
     }
 
     loadedVans();
@@ -17,9 +23,6 @@ const Vans = () => {
 
   // console.log(vans); // {vans: Array(6)}
 
-  const typeFilter = searchParams.get("type");
-
-  // console.log(typeFilter);
   const displayedVans = typeFilter
     ? vans.filter((van) => van.type === typeFilter)
     : vans;
@@ -53,6 +56,10 @@ const Vans = () => {
 
       return prevParams;
     });
+  }
+
+  if (loading) {
+    return <h1>Loading...</h1>;
   }
 
   return (
