@@ -65,12 +65,21 @@
 ### - useSearchParams()
 
 ## Links with searchParams()
-### - difference between to and onClick 
-### - need more study for it 
+
+### - difference between to and onClick
+
+### - need more study for it
 
 ## Merge search params
-### Hard coded parameters cause erasing and replacing the existing parameters 
-### - need to study more 
+
+### Hard coded parameters cause erasing and replacing the existing parameters
+
+### - need to study more
 
 ## Back to all vans in VanDetail
 
+## Pass the state to the next page and receive the state 
+
+### - state prop, useLocation() 
+
+### https://reactrouter.com/en/main/components/link#state
